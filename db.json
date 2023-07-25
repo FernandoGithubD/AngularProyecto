@@ -1,0 +1,65 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "empleados": [
+    {
+      "nombre": "Fernando",
+      "apellido": "Diaz",
+      "email": "fernando@gmail.com",
+      "fn": "2001-07-10T04:00:00.000Z",
+      "genero": "Masculino",
+      "educacion": "Media",
+      "labor": "Estudiante",
+      "experiencia": 0,
+      "sueldo": 0,
+      "id": 1
+    },
+    {
+      "nombre": "Test",
+      "apellido": "Final",
+      "email": "FinalTest@gmail.com",
+      "fn": "2023-07-23T04:00:00.000Z",
+      "genero": "Otros",
+      "educacion": "Sin Estudios",
+      "labor": "Testeo",
+      "experiencia": 0,
+      "sueldo": 100000,
+      "id": 2
+    }
+  ],
+  "productos": [
+    {
+      "nombre": "Bolsa Cemento 1kg",
+      "marca": "Polpaico",
+      "precio": 20000,
+      "categoria": "Pavimentacion",
+      "proveedor": "Polpaico",
+      "stock": 20,
+      "id": 1
+    },
+    {
+      "nombre": "ProductoTest",
+      "marca": "Final",
+      "precio": 500,
+      "categoria": "Exteriores",
+      "proveedor": "Pruebas",
+      "stock": 9,
+      "id": 2
+    }
+  ]
+}

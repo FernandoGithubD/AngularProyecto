@@ -1,0 +1,30 @@
+<div>
+    <h2>TEST API</h2>
+    <h4>Esta es una API publica utilizada para probar Conexion a API externa sin uso de Json-Server(se utilizo jsonplaceholder para acceso a esta)</h4>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Vivienda</th>
+                <th>Ciudad</th>
+                <th>Telefono</th>
+                <th>Compañia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.address.street}}</td>
+                <td>{{item.address.city}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.company.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

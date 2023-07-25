@@ -1,0 +1,67 @@
+<div mat-dialog-title>
+    <h1>Formulario de Empleado</h1>
+</div>
+<form [formGroup] ="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" placeholder="Ingrese Nombre.." formControlName="nombre">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Apellido</mat-label>
+                <input matInput placeholder="Ingrese Apellido.." formControlName="apellido">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ingrese Email.." formControlName="email">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Fecha de Nacimiento</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="fn">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-radio-group aria-label="Seleccione Genero" formControlName="genero">
+                <mat-label><b>Genero</b></mat-label>
+                <mat-radio-button value="Masculino">Masculino</mat-radio-button>
+                <mat-radio-button value="Femenino">Femenino</mat-radio-button>
+                <mat-radio-button value="Otros">Otro</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>Tipo de Educacion</mat-label>
+                <mat-select formControlName="educacion">
+                    <mat-option *ngFor="let val of educacion" [value]="val">{{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Labor</mat-label>
+                <input matInput placeholder="Ingrese Labor.." formControlName="labor">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Experiencia(años)</mat-label>
+                <input matInput placeholder="Ingrese Cantidad.." type="number" formControlName="experiencia">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Sueldo</mat-label>
+                <input matInput placeholder="Ingrese Sueldo.." type="number" formControlName="sueldo">
+                <mat-hint>En pesos</mat-hint>
+            </mat-form-field>
+
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Actualizar': 'Guardar'}}</button>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+<div mat-dialog-title>
+    <h1>Datos Producto</h1>
+</div>
+<form [formGroup] ="proForm" (ngSubmit)="inFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre Producto</mat-label>
+                <input matInput type="text" placeholder="Ingrese Nombre del Producto.." formControlName="nombre">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Marca</mat-label>
+                <input matInput placeholder="Ingrese Marca.." formControlName="marca" type="text">
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Precio</mat-label>
+                <input matInput type="number" placeholder="Ingrese Precio.." formControlName="precio">
+                <mat-hint>En pesos</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Categoria del Producto</mat-label>
+                <mat-select formControlName="categoria">
+                    <mat-option *ngFor="let val of categoria" [value]="val">{{val}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Proveedor</mat-label>
+                <input matInput placeholder="Ingrese Proveedor.." formControlName="proveedor">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Cantidad en Stock</mat-label>
+                <input matInput placeholder="Ingrese Cantidad.." type="number" formControlName="stock">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Actualizar': 'Guardar'}}</button>
+    </div>
+</form>
